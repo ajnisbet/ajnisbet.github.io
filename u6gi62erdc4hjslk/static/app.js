@@ -20,7 +20,7 @@
 		var e = document.getElementById('campaignChooser');
 		campaignId = e.options[e.selectedIndex].value;
 		// var jsonUrl = 'http://127.0.0.1:8000/data/' + campaignId + '.json';
-		var jsonUrl = 'https://ajnisbet.github.io/data/' + campaignId + '.json';
+		var jsonUrl = 'https://ajnisbet.github.io/u6gi62erdc4hjslk/data/' + campaignId + '.json';
 
 		// Clear the chart.
 		var e = document.getElementById('chart');
