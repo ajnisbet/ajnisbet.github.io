@@ -1,0 +1,82 @@
+body {
+	background-color: #fcfcfc;
+	padding-bottom: 200px;
+}
+/*.well {
+	background-color: #fff;
+}*/
+.axis path,
+.axis line {
+	fill: none;
+	stroke: #000;
+	shape-rendering: crispEdges;
+}
+
+.dot {
+	stroke: rgba(0, 0, 0, 0.7);
+	fill: rgba(0, 0, 0, 0.3);
+}
+.selected-dot {
+	stroke: rgba(200, 0, 0, 0.7);
+	fill: rgba(200, 0, 0, 0.3);
+}
+.chart-wrapper {
+	margin: 0 auto;
+	width: 500px;
+	height: 500px;
+}
+
+.chart-holder {
+	margin: 0 auto;
+	width: 500px;
+}
+.chart-wrapper2 {
+	margin: 0 auto;
+	width: 800px;
+	height: 500px;
+}
+
+.chart-holder2 {
+	margin: 0 auto;
+	width: 800px;
+}
+
+.range-header {
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+.range-holder {
+	margin-top: 50px;
+	padding-bottom: 50px;
+}
+
+.range-label {
+	font-weight: bold;
+}
+
+#range {
+	padding-bottom: 50px;
+}
+
+.store-count{
+	margin-top: 10px;
+	margin-bottom: 20px;
+	text-align: center;
+	font-size: 1.5em;
+}
+
+.store-count-2 {
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+.line {
+	fill: none;
+	stroke-width: 3;
+	stroke:  rgba(0, 0, 0, 0.9)
+}
+
+.area {
+	fill: rgba(200, 0, 0, 0.4);
+}
