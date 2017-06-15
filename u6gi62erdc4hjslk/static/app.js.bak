@@ -19,15 +19,13 @@
 		// Get current campaign ID.
 		var e = document.getElementById('campaignChooser');
 		campaignId = e.options[e.selectedIndex].value;
-		// var jsonUrl = 'https://ajnisbet.github.io/u6gi62erdc4hjslk/data/' + campaignId + '.json';
-		var jsonUrl = 'http://127.0.0.1:8000/u6gi62erdc4hjslk/data/' + campaignId + '.json';
+		// var jsonUrl = 'http://127.0.0.1:8000/data/' + campaignId + '.json';
+		var jsonUrl = 'https://ajnisbet.github.io/u6gi62erdc4hjslk/data/' + campaignId + '.json';
 
 		// Clear the chart.
 		var e = document.getElementById('chart');
 		e.innerHTML = '';
 		var e = document.getElementById('chart2');
-		e.innerHTML = '';
-		var e = document.getElementById('chart3');
 		e.innerHTML = '';
 
 		// Update the title.
@@ -134,9 +132,8 @@
 		_updateColours();
 
 	}
-	
 	function buildChart3() {
-		var dataset = _.zip(data.featured_index, data.feat_to_base, data.is_outlier, data.lost_sales_rank);
+		var dataset = _.zip(data.featured_index, data.base_index, data.is_outlier, data.lost_sales_rank);
 		var datasetClean = _.remove(dataset, function(o) { return !o[2]});
 
 		// Compute dimensions.
@@ -156,27 +153,18 @@
 		var yAxis = d3.svg.axis()
 			.scale(y)
 			.ticks(5)
-			.orient('left')
-			.tickFormat(function(d) { return d + "%"; });
+			.orient('left');
 
 		// Axis limits.
 		var maxValue = 0;
 		for (var i=0; i < datasetClean.length; i++) {
 			if (~datasetClean[i][2]) {
-				maxValue = Math.max(maxValue, datasetClean[i][0]);
+				maxValue = Math.max(maxValue, datasetClean[i][0], datasetClean[i][1]);
 			}
 		}
-		var xExtent = [0, maxValue];
-		x.domain(xExtent).nice();
-		
-		var maxValue = 0;
-		for (var i=0; i < datasetClean.length; i++) {
-			if (~datasetClean[i][2]) {
-				maxValue = Math.max(maxValue, datasetClean[i][1]);
-			}
-		}
-		var yExtent = [0, maxValue];
-		y.domain(yExtent).nice();
+		var extent = [0, maxValue];
+		x.domain(extent).nice();
+		y.domain(extent).nice();
 
 		// Main chart area.
 		var svg = d3.select('#chart3').append('svg')
@@ -205,7 +193,7 @@
 				.attr('y', 6)
 				.attr('dy', '.71em')
 				.style('text-anchor', 'end')
-				.text('Featured to Base Ratio')
+				.text('Base Sales Index')
 
 		// Points
 		svg.selectAll('.dot')
@@ -216,6 +204,9 @@
 				.attr('cx', function(d) { return x(d[0]); })
 				.attr('cy', function(d) { return y(d[1]); })
 
+		buildChart2();
+		buildChart3();
+		_updateColours();
 
 	}
 
@@ -337,8 +328,8 @@
 			document.getElementById('slider2').value = e.value;
 		} else {
 			var e = document.getElementById('slider');
-			document.getElementById('slider2').value = e.value;
 			document.getElementById('slider3').value = e.value;
+			document.getElementById('slider2').value = e.value;
 
 		}
 		var rawValue = parseFloat(e.value);
