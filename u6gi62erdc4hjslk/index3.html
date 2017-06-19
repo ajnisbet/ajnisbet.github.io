@@ -1,0 +1,139 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex">
+		<title>Lost Sales UI Prototype</title>
+		<script src="static/lodash.min.js"></script>
+		<script src="static/d3.v3.min.js"></script>
+		<link href="static/bootstrap.min.css" rel="stylesheet">
+		<link href="static/app.css" rel="stylesheet">
+	</head>
+	<body>
+		<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a href="#!" class="navbar-brand">Lost Sales UI Prototype</a>
+				</div>
+			</div>
+		</nav>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							1. Load campaign
+						</div>
+						<div class="panel-body">
+							<form action="#!" class="form-horizontal">
+								<div class="form-group">
+									<br>
+									<label for="campaignChooser" class="col-lg-2">Campaign ID</label>								
+									<select name="campaignChooser" id="campaignChooser" class="col-lg-4">
+										<option value="OIQ000100">OIQ000100</option>
+										<option value="OIQ001544">OIQ001544</option>
+										<option value="VAL001481">VAL001481</option>
+									</select>
+								</div>
+							</form>
+
+						</div>
+					</div>
+
+
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							4. Line/spending efficiency UI: <span id="headingCampaignId2">OIQ000100</span>
+						</div>
+						<div class="panel-body">
+							<div class="chart-holder2">
+
+								<div class="well">
+									<dl class="dl-horizontal">
+										<dt>Campaign name</dt>
+										<dd id="campaignName">Omni Hair Unilever Walmart Q4</dd>
+										<dt>Vendor</dt>
+										<dd id="vendor">Unilever</dd>
+										<dt>Retailer</dt>
+										<dd><span id="retailer">Walmart</span> (<span id="nRetailerStores">4602</span> stores)</dd>
+										<dt>Featured Items</dt>
+										<dd>Currently scanning at <span id="featuredAmount">1000</span> (<span id="featuredPerc">80</span>%) of stores</dd>
+										<dt>Lost Sales</dt>
+										<dd><span id="nLost">200</span> stores (<span id="lostPerc">12</span>%) have lost sales, totalling $<span id="lostAmount">100,555</span> (over the 2 year campaign setup period)</dd>
+
+									</dl>
+								</div>
+								<div id="chart2" class="chart-wrapper2"></div>
+								<!-- <div class="well range-holder">
+									<div class="store-count">
+										<span id="storeCount" class="store-count-2">56</span> stores selected (<span id="storePerc">12</span>%)
+									</div>
+									<input type="range" id="slider" min="0" value="0.1" max="1" step="0.001">
+									<div class="range-label pull-left">← Higher opportunity stores</div>
+									<div class="range-label pull-right">Lower opportunity stores →</div>
+								</div> -->
+							</div>
+							<div class="chart-holder">
+								<div class="well range-holder">
+									<div class="lost-details">
+
+										<div class="row top-row">
+											<div class="col-xs-6 left">
+												Lost sales efficiency
+											</div>
+											<div class="col-xs-6 right">
+												<strong id="lostSalesEfficienct">300%</strong>
+											</div>
+										</div>
+
+										<div class="row">
+											<div class="col-xs-6 left">
+												Lost sales
+											</div>
+											<div class="col-xs-6 right">
+												<strong id="lostSalesamount">$10,000</strong> (<span id="lostSalesPerc">100</span>)
+											</div>
+										</div>
+
+										<div class="row">
+											<div class="col-xs-6 left">
+												Stores with lost sales
+											</div>
+											<div class="col-xs-6 right">
+												<strong id="storesWithLostSales">500</strong> (<span id="storesWithLostSalesPerc">100</span>)
+											</div>
+										</div>
+
+										<div class="row">
+											<div class="col-xs-6 left">
+												Total stores
+											</div>
+											<div class="col-xs-6 right">
+												<strong id="storeCount">500</strong> (<span id="storePerc">100</span>)
+											</div>
+										</div>
+
+
+									</div>
+									<!-- <div class="store-count">
+	
+	
+
+										<span id="percCount" class="store-count-2">29%</span> of lost sales captured 
+										from <span id="storePerc2" class="store-count-2">5.2%</span> of stores 
+									</div> -->
+									<input type="range" id="slider2" min="0" value="0.1" max="1" step="0.001">
+									<div class="range-label pull-left">← Higher opportunity stores</div>
+									<div class="range-label pull-right">Lower opportunity stores →</div>
+									<label for="inc" class="inc"><input id="inc" type="checkbox" name="inc">Include only scanning stores.</label>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	<script src="static/app3.js"></script>
+	</body>
+</html>
