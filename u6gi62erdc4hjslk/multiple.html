@@ -1,0 +1,117 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex">
+		<title>Lost Sales UI Prototype</title>
+		<script src="static/lodash.min.js"></script>
+		<script src="static/d3.v3.min.js"></script>
+		<link href="static/bootstrap.min.css" rel="stylesheet">
+		<link href="static/app.css" rel="stylesheet">
+	</head>
+	<body>
+		<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a href="index.html" class="navbar-brand">Lost Sales UI Prototype</a>
+				</div>
+			</div>
+		</nav>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							1. Load campaign
+						</div>
+						<div class="panel-body">
+							<form action="#!" class="form-horizontal">
+								<div class="form-group">
+									<br>
+									<label for="campaignChooser" class="col-lg-2">Campaign ID</label>								
+									<select name="campaignChooser" id="campaignChooser" class="col-lg-4">
+										<option value="OIQ000100">OIQ000100</option>
+										<option value="OIQ001544">OIQ001544</option>
+										<option value="VAL001481">VAL001481</option>
+									</select>
+								</div>
+							</form>
+						</div>
+					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							2. Grid UI: <span id="headingCampaignId">OIQ000100</span>
+						</div>
+						<div class="panel-body">
+							<div class="chart-holder">
+								<div id="chart" class="chart-wrapper"></div>
+								<div class="well range-holder">
+									<!-- <h6 class="range-header">Choose Lost Sales Threshold</h6> -->
+									<div class="store-count">
+										<span id="storeCount" class="store-count-2">240</span> stores selected (<span id="storePerc">5.2</span>%)
+									</div>
+									<input type="range" id="slider" min="0" value="0.1" max="1" step="0.001">
+									<div class="range-label pull-left">← Higher opportunity stores</div>
+									<div class="range-label pull-right">Lower opportunity stores →</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							3. Grid Ratio UI: <span id="headingCampaignId3">OIQ000100</span>
+						</div>
+						<div class="panel-body">
+							<div class="chart-holder">
+								<div id="chart3" class="chart-wrapper"></div>
+								<div class="well range-holder">
+									<!-- <h6 class="range-header">Choose Lost Sales Threshold</h6> -->
+									<div class="store-count">
+										<span id="storeCount3" class="store-count-2">240</span> stores selected (<span id="storePerc3">5.2</span>%)
+									</div>
+									<input type="range" id="slider3" min="0" value="0.1" max="1" step="0.001">
+									<div class="range-label pull-left">← Higher opportunity stores</div>
+									<div class="range-label pull-right">Lower opportunity stores →</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							4. Line/spending efficiency UI: <span id="headingCampaignId2">OIQ000100</span>
+						</div>
+						<div class="panel-body">
+							<div class="chart-holder2">
+								<div id="chart2" class="chart-wrapper2"></div>
+								<!-- <div class="well range-holder">
+									<div class="store-count">
+										<span id="storeCount" class="store-count-2">56</span> stores selected (<span id="storePerc">12</span>%)
+									</div>
+									<input type="range" id="slider" min="0" value="0.1" max="1" step="0.001">
+									<div class="range-label pull-left">← Higher opportunity stores</div>
+									<div class="range-label pull-right">Lower opportunity stores →</div>
+								</div> -->
+							</div>
+							<div class="chart-holder">
+								<div class="well range-holder">
+									<div class="store-count">
+										<span id="percCount" class="store-count-2">29%</span> of lost sales captured 
+										from <span id="storePerc2" class="store-count-2">5.2%</span> of stores 
+									</div>
+									<input type="range" id="slider2" min="0" value="0.1" max="1" step="0.001">
+									<div class="range-label pull-left">← Higher opportunity stores</div>
+									<div class="range-label pull-right">Lower opportunity stores →</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	<script src="static/app.js"></script>
+	</body>
+</html>

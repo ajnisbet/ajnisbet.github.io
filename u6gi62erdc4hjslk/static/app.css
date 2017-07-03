@@ -12,13 +12,48 @@ body {
 	shape-rendering: crispEdges;
 }
 
+
+.explanation {
+	font-size: 0.6em;
+}
+
 .dot {
 	stroke: rgba(0, 0, 0, 0.7);
 	fill: rgba(0, 0, 0, 0.3);
 }
+
+.circle {
+	background-color: rgba(0, 0, 0, 0.3);
+	border: 1px solid rgba(0, 0, 0, 0.7);
+	border-radius: 18px;
+	display: inline-block;
+	height: 8px;
+	width: 8px;
+}
+.circle-selected {
+	background-color: rgba(215, 48, 39, 0.3);
+	border: 1px solid rgba(215, 48, 39, 0.7);
+	border-radius: 18px;
+	display: inline-block;
+	height: 8px;
+	width: 8px;
+}
+.circle-negative {
+	background-color: rgba(26, 152, 80, 0.3);
+	border: 1px solid rgba(26, 152, 80, 0.7);
+	border-radius: 18px;
+	display: inline-block;
+	height: 8px;
+	width: 8px;
+}
+
 .selected-dot {
-	stroke: rgba(200, 0, 0, 0.7);
-	fill: rgba(200, 0, 0, 0.3);
+	stroke: rgba(215, 48, 39, 0.7);
+	fill: rgba(215, 48, 39, 0.3);
+}
+.negative-dot {
+	stroke: rgba(26, 152, 80, 0.7);
+	fill: rgba(26, 152, 80, 0.3);
 }
 .chart-wrapper {
 	margin: 0 auto;
@@ -28,7 +63,7 @@ body {
 
 .chart-holder {
 	margin: 0 auto;
-	width: 500px;
+	width: 600px;
 }
 .chart-wrapper2 {
 	margin: 0 auto;
@@ -91,6 +126,3 @@ body {
 	fill: rgba(200, 0, 0, 0.4);
 }
 
-.inc {
-	padding-top: 50px;
-}
