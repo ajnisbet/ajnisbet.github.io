@@ -1,0 +1,123 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex">
+		<title>Lost Sales UI Prototype</title>
+		<script src="static/lodash.min.js"></script>
+		<script src="static/d3.v3.min.js"></script>
+		<link href="static/bootstrap.min.css" rel="stylesheet">
+		<link href="static/app.css?3" rel="stylesheet">
+	</head>
+	<body>
+		<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a href="index.html" class="navbar-brand">Lost Sales UI Prototype</a>
+				</div>
+			</div>
+		</nav>
+
+		<div class="container container-wide">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							1. Load data
+						</div>
+						<div class="panel-body">
+							<form action="#!" class="form-horizontal">
+								<div class="form-group">
+									<br>
+									<label for="campaignChooser" class="col-lg-3">Campaign ID</label>								
+									<select name="campaignChooser" id="campaignChooser" class="col-lg-4">
+										<option value="OIQ000100">OIQ000100</option>
+										<option value="OIQ001544">OIQ001544</option>
+										<option value="VAL001481">VAL001481</option>
+									</select>
+								</div>
+
+								<div class="form-group">
+									<label for="inc" class="inc col-lg-3">Include only currently scanning stores.</label>
+									<input id="inc" type="checkbox" name="inc">
+								</div>
+							</form>
+
+						</div>
+					</div>
+
+
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							2. UI: <span id="headingCampaignId2">OIQ000100</span>
+						</div>
+						<div class="panel-body">
+							<div class="chart-holder2">
+
+								<div class="well">
+									<dl class="dl-horizontal">
+										<dt>Campaign Name</dt>
+										<dd id="campaignName">Omni Hair Unilever Walmart Q4</dd>
+										<dt>Vendor Name</dt>
+										<dd id="vendor">Unilever</dd>
+										<dt>Retailer</dt>
+										<dd><span id="retailer">Walmart</span> (<span id="nRetailerStores">4602</span> stores)</dd>
+										<dt>Featured Items</dt>
+										<dd>Currently scanning at <span id="featuredAmount">1000</span> of retailer stores</dd>
+										<dt>Lost Sales</dt>
+										<dd><strong id="nLost">2000</strong> stores are underdeveloped, with "lost sales" totalling <strong id="lostAmountAnnual">$1,000,555</strong> per year.
+
+
+									</dl>
+								</div>
+								<div class="chart-holder">
+									<div class="well range-holder">
+										<div class="lost-details">
+
+											<div class="row top-row">
+												<div class="col-xs-6 left">
+													Targeting Efficiency
+												</div>
+												<div class="col-xs-6 right">
+													<strong id="lostSalesEfficienct">300%</strong> <span class="explanation">(% lost sales / % lost stores)</span>
+												</div>
+											</div>
+
+											<div class="row top-row">
+												<div class="col-xs-6 left">
+													Lost Sales Coverage
+												</div>
+												<div class="col-xs-6 right">
+													<strong id="lostSalesPerc">300%</strong> <span class="explanation">of "lost" sales targeted</span>
+												</div>
+											</div>
+
+											<div class="row top-row">
+												<div class="col-xs-6 left">
+													Lost Stores Coverage
+												</div>
+												<div class="col-xs-6 right">
+													<strong id="storesWithLostSalesPerc">300%</strong> <span class="explanation">of stores with "lost" sales targeted</span>
+												</div>
+											</div>
+
+										</div>
+										<input type="range" id="slider2" min="0" value="0.1" max="1" step="0.001">
+										<div class="range-label pull-left">← Higher opportunity stores</div>
+										<div class="range-label pull-right">Lower opportunity stores →</div>
+										
+									</div>
+								</div>
+							</div>
+							<div class="chart-holder-both">
+								<div id="chart2" class="chart-wrapper-2 pull-left"></div>
+								<div id="chart3" class="chart-wrapper pull-right"></div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	<script src="static/app-line-scatter.js"></script>
+	</body>
+</html>

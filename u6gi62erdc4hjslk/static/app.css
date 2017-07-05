@@ -12,6 +12,9 @@ body {
 	shape-rendering: crispEdges;
 }
 
+.chart-holder-both {
+	padding: 20px;
+}
 
 .explanation {
 	font-size: 0.6em;
@@ -123,6 +126,12 @@ body {
 }
 
 .area {
-	fill: rgba(200, 0, 0, 0.4);
+	fill: rgba(215, 48, 39, 0.7);
 }
 
+
+@media (min-width: 1400px) {
+	.container.container-wide {
+		width: 1400px;
+	}
+}
