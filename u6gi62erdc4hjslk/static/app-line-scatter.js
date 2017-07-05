@@ -292,7 +292,7 @@
 				maxValue = Math.max(maxValue, datasetClean[i][1]);
 			}
 		}
-		var yExtent = [0, maxValue];
+		var yExtent = [0, 200];
 		y.domain(yExtent).nice();
 
 		// Main chart area.
